@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Euromaster Neumáticos Tamarit - Expertos en Tu Vehículo en Valencia</title>
+    <meta name="description" content="Euromaster Neumáticos Tamarit en Valencia. Tu taller de confianza para neumáticos, mecánica rápida, revisiones y más. Calidad y servicio profesional garantizados.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base y Reset */
+        :root {
+            --primary-color: #1A2B42; /* Azul Oscuro / Carbón */
+            --secondary-color: #F8F8F8; /* Gris Claro */
+            --accent-color: #FFD100; /* Amarillo Euromaster */
+            --text-dark: #333333;
+            --text-light: #FFFFFF;
+            --gray-light: #EEEEEE;
+            --gray-medium: #AAAAAA;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--secondary-color);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 0.8em;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Botones */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 0.8rem 1.8rem;
+            border-radius: 5px;
+            font-weight: 600;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #FFC000; /* Un poco más oscuro */
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+
+        .btn-secondary:hover {
+            background-color: #2D4A6E; /* Un poco más claro */
+            transform: translateY(-2px);
+        }
+
+        /* Header / Navegación */
+        .header {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-light);
+            white-space: nowrap;
+            margin-right: 1rem;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            flex-grow: 1;
+            justify-content: flex-end; /* Alinea los elementos a la derecha */
+        }
+
+        .nav-item a {
+            color: var(--text-light);
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-item a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-item a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-item a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 43, 66, 0.7), rgba(26, 43, 66, 0.7)), url('https://via.placeholder.com/1920x1080/1A2B42/FFFFFF?text=Fondo+Taller+Automotriz') no-repeat center center/cover;
+            color: var(--text-light);
+            text-align: center;
+            padding: 6rem 1rem;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Secciones Generales */
+        .section {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .section:nth-of-type(even) {
+            background-color: var(--gray-light);
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* Sección Servicios */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background-color: var(--text-light);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+            transition: color 0.3s ease;
+        }
+        
+        .service-card:hover .icon {
+            color: var(--primary-color);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-color);
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            flex-grow: 1;
+        }
+
+        /* Sección Presupuesto / Contacto */
+        .form-container {
+            max-width: 700px;
+            margin: 2rem auto;
+            background-color: var(--text-light);
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.6rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--gray-medium);
+            border-radius: 5px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: var(--text-dark);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--accent-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 209, 0, 0.3);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Sección Sobre Nosotros */
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .about-text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-image {
+            flex: 1;
+            max-width: 500px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Contacto Info */
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .contact-item {
+            background-color: var(--text-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-item .icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-item p {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .contact-item a {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--gray-light);
+            padding: 3rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-col h4 {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.7rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--gray-light);
+            transition: color 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            color: var(--accent-color);
+            font-size: 1.8rem;
+            margin-right: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            color: var(--text-light);
+        }
+
+        .footer-bottom {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+
+        /* Responsive Design (Mobile First) */
+
+        /* Tablets */
+        @media (min-width: 768px) {
+            .navbar {
+                flex-wrap: nowrap;
+            }
+
+            .nav-list {
+                flex-grow: 0;
+            }
+
+            .hero {
+                padding: 8rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero p {
+                font-size: 1.3rem;
+            }
+
+            .section {
+                padding: 6rem 0;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                flex-direction: row;
+                text-align: left;
+            }
+            .about-text {
+                padding-right: 2rem;
+            }
+        }
+
+        /* Desktops */
+        @media (min-width: 1024px) {
+            .header {
+                padding: 1rem 0;
+            }
+
+            .navbar {
+                justify-content: space-between;
+            }
+
+            .nav-list {
+                justify-content: flex-end;
+            }
+
+            .hero {
+                padding: 10rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 4rem;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .footer-content {
+                text-align: left;
+                justify-content: space-around;
+            }
+            .footer-col {
+                flex: none;
+                width: 25%; /* Para tener 4 columnas casi iguales */
+            }
+        }
+    </style>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage">
+
+    <header class="header" itemscope itemtype="http://schema.org/Organization">
+        <div class="container navbar">
+            <a href="#inicio" class="logo" itemprop="url" aria-label="Euromaster Neumáticos Tamarit - Ir al inicio">Euromaster Tamarit</a>
+            <nav>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a href="#servicios">Servicios</a></li>
+                    <li class="nav-item"><a href="#presupuesto">Presupuesto</a></li>
+                    <li class="nav-item"><a href="#nosotros">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <meta itemprop="name" content="Euromaster Neumáticos Tamarit">
+        <meta itemprop="description" content="Taller de neumáticos y mecánica rápida en Valencia.">
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h1 itemprop="headline">Confianza y Seguridad en Cada Kilómetro 🛣️</h1>
+                <p>Tu taller Euromaster de neumáticos y mecánica rápida en Valencia. Profesionales a tu servicio para el cuidado de tu vehículo.</p>
+                <a href="#presupuesto" class="btn">Solicitar Presupuesto Gratuito</a>
+                <a href="#servicios" class="btn btn-secondary" style="margin-left: 1rem;">Nuestros Servicios</a>
+            </div>
+        </section>
+
+        <section id="servicios" class="section">
+            <div class="container">
+                <h2 class="section-title">Nuestros Servicios ⚙️</h2>
+                <p style="max-width: 700px; margin: 0 auto 3rem;">En Euromaster Neumáticos Tamarit ofrecemos una amplia gama de servicios para mantener tu coche en perfectas condiciones, garantizando tu seguridad y la de los tuyos.</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <span class="icon">🚗</span>
+                        <h3>Neumáticos de Calidad</h3>
+                        <p>Venta, montaje, equilibrado y reparación de neumáticos para todo tipo de vehículos. Las mejores marcas al mejor precio.</p>
+                    </div>
+                    <div class="service-card">
+                        <span class="icon">🔧</span>
+                        <h3>Mecánica Rápida</h3>
+                        <p>Cambios de aceite y filtros, frenos, amortiguadores, baterías, escapes y todo lo necesario para el mantenimiento básico.</p>
+                    </div>
+                    <div class="service-card">
+                        <span class="icon">ALIGN</span>
+                        <h3>Alineación de Dirección</h3>
+                        <p>Ajuste preciso de la dirección para un desgaste uniforme de los neumáticos y una conducción segura y cómoda.</p>
+                    </div>
+                    <div class="service-card">
+                        <span class="icon">💡</span>
+                        <h3>Diagnóstico Avanzado</h3>
+                        <p>Detectamos y solucionamos problemas electrónicos y mecánicos complejos con la última tecnología de diagnóstico.</p>
+                    </div>
+                    <div class="service-card">
+                        <span class="icon">🚦</span>
+                        <h3>Pre-ITV</h3>
+                        <p>Revisión exhaustiva de todos los puntos clave de tu vehículo para asegurar un resultado favorable en la Inspección Técnica.</p>
+                    </div>
+                    <div class="service-card">
+                        <span class="icon">❄️</span>
+                        <h3>Climatización y Aire Acondicionado</h3>
+                        <p>Mantenimiento y recarga de sistemas de aire acondicionado para tu confort durante todo el año.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="presupuesto" class="section">
+            <div class="container">
+                <h2 class="section-title">Solicita tu Presupuesto ✍️</h2>
+                <p style="max-width: 700px; margin: 0 auto 2rem;">¿Necesitas un servicio específico o tienes alguna duda? Rellena nuestro formulario y te contactaremos con una solución personalizada y sin compromiso.</p>
+                
+                <div class="form-container">
+                    <form action="mailto:info@euromastertamarit.com?subject=Solicitud%20de%20Presupuesto%20Web" method="post" enctype="text/plain">
+                        <div class="form-group">
+                            <label for="name">Nombre y Apellidos:</label>
+                            <input type="text" id="name" name="Nombre" required placeholder="Tu nombre completo">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="Email" required placeholder="tu.correo@ejemplo.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono:</label>
+                            <input type="tel" id="phone" name="Telefono" placeholder="9 digitos, ej: 963123456">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Servicio de Interés:</label>
+                            <select id="service" name="Servicio_Interes">
+                                <option value="neumaticos">Neumáticos</option>
+                                <option value="mecanica_rapida">Mecánica Rápida</option>
+                                <option value="alineacion">Alineación de Dirección</option>
+                                <option value="pre_itv">Pre-ITV</option>
+                                <option value="otro">Otro (especificar en mensaje)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje / Detalles del Servicio:</label>
+                            <textarea id="message" name="Mensaje" rows="5" placeholder="Describe brevemente lo que necesitas..."></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Enviar Solicitud</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="nosotros" class="section">
+            <div class="container">
+                <h2 class="section-title">Sobre Nosotros ✨</h2>
+                
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="https://via.placeholder.com/600x400/1A2B42/FFFFFF?text=Nuestro+Taller" alt="Interior del taller Euromaster Neumáticos Tamarit">
+                    </div>
+                    <div class="about-text">
+                        <h3>Tu taller de confianza en Valencia</h3>
+                        <p>En **Euromaster Neumáticos Tamarit**, contamos con años de experiencia dedicados al mantenimiento y la reparación de vehículos. Desde nuestros inicios, nuestra misión ha sido ofrecer un servicio de máxima calidad, transparente y adaptado a las necesidades de cada cliente.</p>
+                        <p>Nuestro equipo de profesionales altamente cualificados está en constante formación para estar al día con las últimas tecnologías y técnicas del sector automotriz. Utilizamos equipos de última generación para garantizar diagnósticos precisos y reparaciones eficientes.</p>
+                        <p>La seguridad y la satisfacción de nuestros clientes son nuestra prioridad. Ven a visitarnos en València y descubre por qué somos tu mejor opción para el cuidado de tu coche.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="section">
+            <div class="container">
+                <h2 class="section-title">Contáctanos 📞</h2>
+                <p style="max-width: 700px; margin: 0 auto 2rem;">Estamos a tu disposición para cualquier consulta. ¡No dudes en contactarnos!</p>
+
+                <div class="contact-info-grid">
+                    <div class="contact-item" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                        <span class="icon">📍</span>
+                        <p><strong>Dirección:</strong></p>
+                        <p itemprop="streetAddress">C/ de Llevant, 15</p>
+                        <p><span itemprop="addressLocality">València</span>, <span itemprop="addressRegion">Valencia</span> <span itemprop="postalCode">46026</span></p>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">📞</span>
+                        <p><strong>Teléfono:</strong></p>
+                        <p><a href="tel:+34963961889" itemprop="telephone">963 961 889</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">📧</span>
+                        <p><strong>Email:</strong></p>
+                        <p><a href="mailto:info@euromastertamarit.com" itemprop="email">info@euromastertamarit.com</a></p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem; text-align: center;">
+                    <h3 style="margin-bottom: 1rem; color: var(--primary-color);">Encuéntranos en el mapa</h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3079.970476483256!2d-0.34778108462006764!3d39.43190877949392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6048d0a273f55d%3A0xf6b5790a612d7c0!2sC%2F%20de%20Llevant%2C%2015%2C%2046026%20Val%C3%A8ncia%2C%20Valencia!5e0!3m2!1ses!2ses!4v1678912345678!5m2!1ses!2ses" width="100%" height="450" style="border:0; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" itemscope itemtype="http://schema.org/LocalBusiness">
+        <div class="container footer-content">
+            <div class="footer-col" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                <h4>Euromaster Tamarit</h4>
+                <p>C/ de Llevant, 15<br>
+                <span itemprop="addressLocality">46026 València</span>, <span itemprop="addressRegion">Valencia</span></p>
+                <p>Teléfono: <a href="tel:+34963961889" itemprop="telephone">963 961 889</a></p>
+                <p>Email: <a href="mailto:info@euromastertamarit.com" itemprop="email">info@euromastertamarit.com</a></p>
+                <meta itemprop="name" content="Euromaster Neumáticos Tamarit">
+                <meta itemprop="url" content="https://www.euromastertamarit.com"> <!-- Placeholder URL -->
+            </div>
+            <div class="footer-col">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Nuestros Servicios</a></li>
+                    <li><a href="#presupuesto">Solicitar Presupuesto</a></li>
+                    <li><a href="#nosotros">Sobre Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Servicios Destacados</h4>
+                <ul>
+                    <li><a href="#servicios">Venta y Montaje de Neumáticos</a></li>
+                    <li><a href="#servicios">Mecánica Rápida</a></li>
+                    <li><a href="#servicios">Alineación de Dirección</a></li>
+                    <li><a href="#servicios">Revisión Pre-ITV</a></li>
+                    <li><a href="#servicios">Cambio de Aceite</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook Euromaster Tamarit">📘</a>
+                    <a href="#" aria-label="Instagram Euromaster Tamarit">📸</a>
+                    <a href="#" aria-label="Twitter Euromaster Tamarit">🐦</a>
+                </div>
+                <p style="margin-top: 1rem;">Visita nuestro taller en persona. ¡Te esperamos!</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> Euromaster Neumáticos Tamarit. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
